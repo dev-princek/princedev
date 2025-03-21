@@ -1,26 +1,224 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents unwanted scrolling */
+  background: black;
+ 
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* .container {
+  background-color: #111; 
+  max-width:100%;
+  height:100%;
+} */
+
+.imageSection  {
+  position: relative;
+  background-color: #ffbb00;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.imageWrapper img {   
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.contentSection {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-align: left;
+}
+
+.contentWrapper h3 {
+  font-weight: 600;
+  color: #ffbb00;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.customButton {
+  background-color: #ffbb00;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 20%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icon {
+  background-color: #333;
+  color: #ffbb00;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.image_section {
+  border: 15px solid  #ffbb00;
+  z-index: 9999;
+  border-radius: 21px;
+  border-radius: 20px;
+  
+}
+
+.image-border {
+  position: relative;
+  border-radius: 1.5rem;
+  border-top: 20px solid #f0b100;
+  border-right: 20px solid #f0b100;
+  top: -20px;
+  right: -20px;
+  border-left: 2px solid #f0b100;
+  border-bottom: 2px solid #f0b100;
+}
+.border-custom-radius {
+  border-radius: 20px; 
+}
+
+
+
+
+/* Button 1 */
+.button {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  border-radius: 2.5rem;
+  transition: 0.5s;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  background-image: linear-gradient(
+    to right,
+    #8081cf,
+    #847dc9,
+    #8778c3,
+    #8a74bd,
+    #8d70b7,
+    #8f6db2,
+    #9169ac,
+    #9266a7,
+    #9362a1,
+    #935e9a,
+    #935b93,
+    #93578d
+  );
+  color: white;
+  animation: blurr 2s;
+  animation-iteration-count: infinite;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.button-img {
+  margin-left: 10px;
+  transition: all .8s;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+}
+
+@keyframes blurr {
+  0%,
+  100% {
+    box-shadow: 0 0 10px var(--handshake);
+  }
+
+  50% {
+    box-shadow: 0 0 36px var(--handshake);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fade {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
 }
+
+.title {
+  font-weight: bold;
+  margin-top: 0.8rem;
+  margin-left: 3.5rem;
+  transition: all .5s;
+  text-shadow: 2px 2px 4px #00000080;
+}
+.button:hover .title {
+  transform: translateX(-140px);
+  animation: fade 0.5s;
+  opacity: 0%;
+}
+
+.button:hover img {
+  transform: translateX(-370px);
+}
+
+.description {
+  position: absolute;
+  margin-top: 0.6rem;
+  font-weight: bold;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-style: italic;
+  transition: all .5s;
+  opacity: 0;
+  margin-left: -1rem;
+  text-shadow: 2px 2px 4px #00000080;
+}
+
+.button:hover .description {
+  transform: translateX(70px);
+  opacity: 100%;
+}
+
+
+
+.bubble {
+  width: 20px;
+  height: 20px;
+  background-color: #f0b100;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  animation: fadeOut 1s forwards;
+  z-index: 98;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
