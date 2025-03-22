@@ -114,18 +114,11 @@ html, body {
   font-size: 1rem;
   background-image: linear-gradient(
     to right,
-    #8081cf,
-    #847dc9,
-    #8778c3,
-    #8a74bd,
-    #8d70b7,
-    #8f6db2,
-    #9169ac,
-    #9266a7,
-    #9362a1,
-    #935e9a,
-    #935b93,
-    #93578d
+    #f0b100, /* Theme color */
+    #d49e00,
+    #b98b00,
+    #9e7800,
+    #846600
   );
   color: white;
   animation: blurr 2s;
@@ -222,3 +215,62 @@ html, body {
   }
 }
 
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+} 
+/* Header container */
+.header {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  /* background-color: #111; */
+  padding: 10px;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Menu container */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Default menu item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  color: #f0b100;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  width: 50px; /* Default width */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Hover effect: expand background & show text */
+.menu-item.active {
+  background-color: #f0b100;
+  color: black;
+  border: 2px solid white;
+  width: 150px; /* Expand on hover */
+}
+
+/* Default hidden text */
+.menu-text {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show text inside button when hovered */
+.menu-item.active .menu-text {
+  opacity: 1;
+}
