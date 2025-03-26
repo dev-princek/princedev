@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const [activeComponent, setActiveComponent] = useState('home');
-   
-  const renderComponent = () => { 
+
+  const renderComponent = () => {
     switch (activeComponent) {
       case 'home':
         return <Hero />;
@@ -23,22 +23,25 @@ export default function Home() {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden"> 
-        <Header setActiveComponent={setActiveComponent} />
+    <div className="relative h-screen overflow-hidden">
+      <Header
+        setActiveComponent={setActiveComponent}
+        activeComponent={activeComponent}
+      />
 
-        {/* Animated Component Switching */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeComponent}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 50 }}
-            transition={{ duration: 0.5 }}
-          >
-            {renderComponent()}
-          </motion.div>
-        </AnimatePresence>
-      </div>
- 
+      {/* Animated Component Switching */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeComponent}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.5 }}
+        >
+          {renderComponent()}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+
   );
 }
