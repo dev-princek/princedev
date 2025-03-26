@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Hero = () => {
     return (
-        <div className="container h-screen overflow-hidden">
+       
             <div className="row h-screen bg-black text-white">
 
                 {/* Image Section */}
@@ -51,7 +51,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        
     );
 };
 

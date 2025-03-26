@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Home, Person, Work, Email } from "@mui/icons-material"; 
 
-const Header = () => {
+const Header = ({ setActiveComponent, activeComponent }: { setActiveComponent: (component: string) => void, activeComponent: string }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const menuItems = [
@@ -10,22 +10,23 @@ const Header = () => {
     { id: "about", label: "About", icon: <Person fontSize="medium" /> },
     { id: "projects", label: "Projects", icon: <Work fontSize="medium" /> },
     { id: "contact", label: "Contact", icon: <Email fontSize="medium" /> },
-  ];
-
+  ];  
+//  className={`menu-item ${hoveredItem === item.id ? "active" : ""} ${activeComponent == item.id ? "activeCurrent" : ""}` }
   return (
     <header className="header">
       <nav className="menu">
         {menuItems.map((item) => (
-          <a
+           <a
             key={item.id}
             href="#"
-            className={`menu-item ${hoveredItem === item.id ? "active" : ""}`}
+            className={`menu-item ${hoveredItem === item.id ? "active" : ""} ` }
             onMouseEnter={() => setHoveredItem(item.id)}
             onMouseLeave={() => setHoveredItem(null)}
-          >
+            onClick={() => setActiveComponent(item.id)}
+             >
             {item.icon}
             <span className="menu-text">{item.label}</span>
-          </a>
+            </a>
         ))}
       </nav>
     </header>
