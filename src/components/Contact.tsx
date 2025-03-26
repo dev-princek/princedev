@@ -38,7 +38,7 @@ const ContactUs = () => {
                         </div>
                      
                         <div className="col-md-12">
-                               <textarea placeholder="Your Message" rows="5" className="p-3 w-full bg-gray-800 text-white rounded-lg"></textarea>
+                               <textarea placeholder="Your Message"  className="p-3 w-full bg-gray-800 text-white rounded-lg"></textarea>
                         </div>
                      
                         <div className="col-md-12">
