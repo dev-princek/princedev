@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Home, Person, Work, Email } from "@mui/icons-material"; 
 
-const Header = ({ setActiveComponent, activeComponent }: { setActiveComponent: (component: string) => void, activeComponent: string }) => {
+const Header = ({ setActiveComponent}: { setActiveComponent: (component: string) => void, activeComponent: string }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const menuItems = [
