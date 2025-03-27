@@ -8,7 +8,7 @@ const Header = ({ setActiveComponent}: { setActiveComponent: (component: string)
   const menuItems = [
     { id: "home", label: "Home", icon: <Home fontSize="medium" /> },
     { id: "about", label: "About", icon: <Person fontSize="medium" /> },
-    { id: "projects", label: "Projects", icon: <Work fontSize="medium" /> },
+    { id: "project", label: "Project", icon: <Work fontSize="medium" /> },
     { id: "contact", label: "Contact", icon: <Email fontSize="medium" /> },
   ];  
 //  className={`menu-item ${hoveredItem === item.id ? "active" : ""} ${activeComponent == item.id ? "activeCurrent" : ""}` }

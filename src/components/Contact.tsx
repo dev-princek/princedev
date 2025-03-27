@@ -2,10 +2,10 @@ import React from 'react';
 import {LocationOn, Phone, Email, Send } from "@mui/icons-material"; 
 const ContactUs = () => {
     return (
-        <div className="container h-screen  mt-5">
-             <h1 className="text-4xl font-bold text-center text-white">CONTACT <span className="text-yellow-500">US</span></h1>
-        <div className="row bg-black text-white py-10 px-5 gx-10 gy-10 mt-5" >
-       
+         
+            
+        <div className="row text-white py-10 px-5 gx-10 gy-10 mt-5" >
+              <h1 className="text-4xl font-bold text-center text-white mt-5">CONTACT <span className="text-yellow-500">US</span></h1>
                 <div className="col-md-6 ">
                     <h2 className="text-4xl font-bold mb-4">DON'T BE SHY!</h2>
                     <p className="mb-6">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
@@ -53,7 +53,7 @@ const ContactUs = () => {
                    
                 </div>
             </div>
-        </div>
+     
     );
 };
 

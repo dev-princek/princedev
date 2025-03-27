@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Hero = () => {
     return (
        
-            <div className="row h-screen bg-black text-white">
+            <div className="row h-screen text-white">
 
                 {/* Image Section */}
                 <div className="col-md-4 d-flex justify-center align-items-center">

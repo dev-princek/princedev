@@ -1,13 +1,22 @@
-'use client'
+'use client';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Contact from '@/components/Contact'
-import { useState } from 'react';
+import Contact from '@/components/Contact';
+import Project from '@/components/Project';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const [activeComponent, setActiveComponent] = useState('home');
+
+  // Smooth Scroll Function
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -17,31 +26,38 @@ export default function Home() {
         return <About />;
       case 'contact':
         return <Contact />;
+      case 'project':
+        return <Project />;
       default:
         return <Hero />;
     }
   };
 
+  useEffect(() => {
+    scrollToSection(activeComponent);
+  }, [activeComponent]);
+
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-screen overflow-y-auto scrollbar-thin scrollbar-color-yellow-500 scrollbar-track-gray-800">
       <Header
         setActiveComponent={setActiveComponent}
         activeComponent={activeComponent}
       />
-
-      {/* Animated Component Switching */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeComponent}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: 50 }}
-          transition={{ duration: 0.5 }}
-        >
-          {renderComponent()}
-        </motion.div>
-      </AnimatePresence>
+      <div className="container h-screen ">
+        {/* Animated Component Switching */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeComponent}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.5 }}
+            id={activeComponent}  // Add ID for smooth scroll targeting
+          >
+            {renderComponent()}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
-
   );
 }
