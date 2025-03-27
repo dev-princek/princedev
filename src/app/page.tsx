@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Project from '@/components/Project';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
