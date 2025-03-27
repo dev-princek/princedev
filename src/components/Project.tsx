@@ -3,10 +3,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Project = () => {
-    const [activeTab, setActiveTab] = useState('all');
+type ProjectCategory = 'all' | 'web' | 'mobile' | 'design';
 
-    const projects = {
+const Project = () => {
+    const [activeTab, setActiveTab] = useState<ProjectCategory>('web');
+
+    const projects: Record<ProjectCategory, { title: string; image: string; link: string }[]> = {
         all: [
             { title: 'Web Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/web1' },
             { title: 'Web Project 2', image: '/images/web_project2.jpg', link: 'https://example.com/web2' },
@@ -37,12 +39,12 @@ const Project = () => {
                 MY <span className="text-yellow-500">PORTFOLIO</span>
             </h1>
             <div className="text-center mb-4 gap-4 mt-5">
-                <div className="btn-group d-flex flex-wrap" role="group">
+                <div className="btn-group" role="group">
                     {Object.keys(projects).map((tab) => (
                         <button
                             key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`btn ${activeTab === tab ? 'btn-primary' : 'btn-secondary'}`}
+                            onClick={() => setActiveTab(tab as ProjectCategory)}
+                            className={`btn ${activeTab === tab ? 'btn-activeNow' : 'btn-secondary'}`}
                         >
                             {tab.toUpperCase()}
                         </button>
@@ -52,9 +54,9 @@ const Project = () => {
 
             <div className="row g-3">
                 <AnimatePresence mode="wait">
-                    {projects[activeTab].map((project) => (
+                    {projects[activeTab].map((project, index) => (
                         <motion.div
-                            key={project.title}
+                            key={index}
                             className="col-12 col-md-6 col-lg-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
