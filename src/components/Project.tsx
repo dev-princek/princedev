@@ -4,102 +4,45 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Project = () => {
-    const [activeTab, setActiveTab] = useState('web');
+    const [activeTab, setActiveTab] = useState('all');
 
     const projects = {
-        all:[
-            {
-                title: 'Web Project 1',
-                image: '/images/web_project1.jpg',
-                link: 'https://example.com/web1'
-            },
-            {
-                title: 'Web Project 2',
-                image: '/images/web_project2.jpg',
-                link: 'https://example.com/web2'
-            },
-            {
-                title: 'Web Project 3',
-                image: '/images/web_project3.jpg',
-                link: 'https://example.com/web3'
-            },
-            {
-                title: 'Mobile App 1',
-                image: '/images/web_project4.jpg',
-                link: 'https://example.com/mobile1'
-            },
-            {
-                title: 'Mobile App 2',
-                image: '/images/web_project5.jpg',
-                link: 'https://example.com/mobile2'
-            },
-            {
-                title: 'Design Project 1',
-                image: '/images/web_project1.jpg',
-                link: 'https://example.com/design1'
-            },
-            {
-                title: 'Design Project 2',
-                image: '/images/web_project3.jpg',
-                link: 'https://example.com/design2'
-            }
+        all: [
+            { title: 'Web Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/web1' },
+            { title: 'Web Project 2', image: '/images/web_project2.jpg', link: 'https://example.com/web2' },
+            { title: 'Web Project 3', image: '/images/web_project3.jpg', link: 'https://example.com/web3' },
+            { title: 'Mobile App 1', image: '/images/web_project4.jpg', link: 'https://example.com/mobile1' },
+            { title: 'Mobile App 2', image: '/images/web_project5.jpg', link: 'https://example.com/mobile2' },
+            { title: 'Design Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/design1' },
+            { title: 'Design Project 2', image: '/images/web_project3.jpg', link: 'https://example.com/design2' }
         ],
         web: [
-            {
-                title: 'Web Project 1',
-                image: '/images/web_project1.jpg',
-                link: 'https://example.com/web1'
-            },
-            {
-                title: 'Web Project 2',
-                image: '/images/web_project2.jpg',
-                link: 'https://example.com/web2'
-            },
-            {
-                title: 'Web Project 3',
-                image: '/images/web_project3.jpg',
-                link: 'https://example.com/web3'
-            }
+            { title: 'Web Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/web1' },
+            { title: 'Web Project 2', image: '/images/web_project2.jpg', link: 'https://example.com/web2' },
+            { title: 'Web Project 3', image: '/images/web_project3.jpg', link: 'https://example.com/web3' }
         ],
         mobile: [
-            {
-                title: 'Mobile App 1',
-                image: '/images/web_project4.jpg',
-                link: 'https://example.com/mobile1'
-            },
-            {
-                title: 'Mobile App 2',
-                image: '/images/web_project5.jpg',
-                link: 'https://example.com/mobile2'
-            }
+            { title: 'Mobile App 1', image: '/images/web_project4.jpg', link: 'https://example.com/mobile1' },
+            { title: 'Mobile App 2', image: '/images/web_project5.jpg', link: 'https://example.com/mobile2' }
         ],
         design: [
-            {
-                title: 'Design Project 1',
-                image: '/images/web_project1.jpg',
-                link: 'https://example.com/design1'
-            },
-            {
-                title: 'Design Project 2',
-                image: '/images/web_project3.jpg',
-                link: 'https://example.com/design2'
-            }
+            { title: 'Design Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/design1' },
+            { title: 'Design Project 2', image: '/images/web_project3.jpg', link: 'https://example.com/design2' }
         ]
     };
-    
 
     return (
-               <div className="row text-white py-5 px-3 mt-5">
-                 <h1 className="text-4xl font-bold text-center text-white">
+        <div className="row text-white py-5 px-3 mt-5">
+            <h1 className="text-4xl font-bold text-center text-white">
                 MY <span className="text-yellow-500">PORTFOLIO</span>
             </h1>
             <div className="text-center mb-4 gap-4 mt-5">
-                <div className="btn-group" role="group">
+                <div className="btn-group d-flex flex-wrap" role="group">
                     {Object.keys(projects).map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
-                            className={`btn ${activeTab === tab ? 'btn-activeNow' : 'btn-secondary'}`}
+                            className={`btn ${activeTab === tab ? 'btn-primary' : 'btn-secondary'}`}
                         >
                             {tab.toUpperCase()}
                         </button>
@@ -109,9 +52,9 @@ const Project = () => {
 
             <div className="row g-3">
                 <AnimatePresence mode="wait">
-                    {projects[activeTab].map((project, index) => (
+                    {projects[activeTab].map((project) => (
                         <motion.div
-                            key={index}
+                            key={project.title}
                             className="col-12 col-md-6 col-lg-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
