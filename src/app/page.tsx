@@ -10,13 +10,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Home() {
   const [activeComponent, setActiveComponent] = useState('home');
 
-  // Smooth Scroll Function
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  
+ 
 
   const renderComponent = () => {
     switch (activeComponent) {
@@ -33,9 +28,7 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    scrollToSection(activeComponent);
-  }, [activeComponent]);
+ 
 
   return (
     <div className="relative h-screen overflow-y-auto scrollbar-thin scrollbar-color-yellow-500 scrollbar-track-gray-800">
