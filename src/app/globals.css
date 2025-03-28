@@ -10,15 +10,13 @@ html, body {
   /* background: black; */
   background: linear-gradient(135deg, #000000, #1a1a1a, #333333);
 
-  /* background-image: url('/images/background-img.jpg'); */
+  /* background-image: url('/images/background-gf.webp'); */
  
 }
+ 
 
-/* .container {
-  background-color: #111; 
-  max-width:100%;
-  height:100%;
-} */
+
+ 
 
 ::-webkit-scrollbar {
   width: 8px; /* Adjust width as needed */
@@ -93,7 +91,7 @@ html, body {
 
 .icon {
   background-color: #333;
-  color: #ffbb00;
+  color: #f1f1f0;
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -249,7 +247,7 @@ a {
 /* Header container */
 .header {
   position: fixed;
-  right: 0;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   /* background-color: #111; */
@@ -270,23 +268,28 @@ a {
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px;
-  color: #f0b100;
+  gap: 20px;
+  padding: 0 0 0 11px;
+  color: #ebe9e6;
   border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
   position: relative;
-  width: 50px; /* Default width */
+  width: 50px;
   overflow: hidden;
   white-space: nowrap;
+  font-size: 29px;
+  border: 2px solid #f0b100;
+  border-radius: 28px;
 }
 
 /* Hover effect: expand background & show text */
 .menu-item.active {
   background-color: #f0b100;
-  color: black;
-  border: 2px solid white;
-  width: 150px; /* Expand on hover */
+  color: #000;
+  border: 2px solid #fff;
+  font-size: 19px;
+  width: 131px;
+  padding: 4px 4px 5px 12px;
 }
 
 /* Default hidden text */
@@ -303,7 +306,7 @@ a {
 
 .menu-item.activeCurrent {
   color: #f39c12;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .motion-div {
