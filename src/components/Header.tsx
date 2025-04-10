@@ -52,7 +52,7 @@ const Header = ({ setActiveComponent }: { setActiveComponent: (component: string
         </div>
 
         <div className={`menu-items ${isMobileMenuOpen ? "active" : ""}`}>
-          {menuItems.map((item, index) => (
+          {menuItems.map((item) => (
             <a
               key={item.id}
               href="#"
