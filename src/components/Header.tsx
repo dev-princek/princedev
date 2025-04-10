@@ -4,7 +4,7 @@ import { Home, Person, Work, Email, Menu as MenuIcon } from "@mui/icons-material
 
 const Header = ({ setActiveComponent }: { setActiveComponent: (component: string) => void, activeComponent: string }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [ , setIsMobile] = useState<boolean>(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   const menuItems = [
