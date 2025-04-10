@@ -27,7 +27,7 @@ const Hero = () => {
                 </div>
 
                 {/* Content Section */}
-                <div className="col-md-8 d-flex justify-content-center align-items-center" style={{ paddingLeft: '85px' }}>
+                <div className="col-md-8 mt-5 d-flex justify-content-center align-items-center" style={{ paddingLeft: '85px' }}>
                     <div className="text-start">
                         <h1 className="text-6xl font-bold text-yellow-500">I'M PRINCE </h1>
                         <h2 className="text-4xl font-bold">Software Developer</h2>

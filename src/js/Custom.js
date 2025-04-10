@@ -48,6 +48,10 @@ const Custom = () => {
                 cursor.classList.remove('hover');
             });
         });
+        document.querySelector('.menu-btn').addEventListener('click', function () {
+            document.querySelector('.menu-items').classList.toggle('active');
+        });
+        
  
     }, []);
 
