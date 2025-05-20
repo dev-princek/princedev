@@ -3,33 +3,29 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type ProjectCategory = 'all' | 'web' | 'mobile' | 'design';
+type ProjectCategory = 'all' | 'Laravel' | 'Django' | 'Wordpress';
 
 const Project = () => {
-    const [activeTab, setActiveTab] = useState<ProjectCategory>('web');
+    const [activeTab, setActiveTab] = useState<ProjectCategory>('Laravel');
 
     const projects: Record<ProjectCategory, { title: string; image: string; link: string }[]> = {
         all: [
-            { title: 'Web Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/web1' },
-            { title: 'Web Project 2', image: '/images/web_project2.jpg', link: 'https://example.com/web2' },
-            { title: 'Web Project 3', image: '/images/web_project3.jpg', link: 'https://example.com/web3' },
-            { title: 'Mobile App 1', image: '/images/web_project4.jpg', link: 'https://example.com/mobile1' },
-            { title: 'Mobile App 2', image: '/images/web_project5.jpg', link: 'https://example.com/mobile2' },
-            { title: 'Design Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/design1' },
-            { title: 'Design Project 2', image: '/images/web_project3.jpg', link: 'https://example.com/design2' }
+            { title: 'Arriveo', image: '/images/arriveo.png', link: 'https://example.com/web1' },
+            { title: 'Dream Dezine Ecommerce', image: '/images/dreamdzine.png', link: 'https://example.com/web2' },
+            { title: 'Growcart', image: '/images/growcart.png', link: 'https://example.com/web3' },
+            { title: 'FinTrack', image: '/images/fintrack.png', link: 'https://example.com/mobile1' },
+            { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://example.com/mobile2' }, 
         ],
-        web: [
-            { title: 'Web Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/web1' },
-            { title: 'Web Project 2', image: '/images/web_project2.jpg', link: 'https://example.com/web2' },
-            { title: 'Web Project 3', image: '/images/web_project3.jpg', link: 'https://example.com/web3' }
+        Laravel: [
+            { title: 'Arriveo', image: '/images/arriveo.png', link: 'https://example.com/web1' },
+            { title: 'Dream Dezine Ecommerce', image: '/images/dreamdzine.png', link: 'https://example.com/web2' },
+            { title: 'Growcart', image: '/images/growcart.png', link: 'https://example.com/web3' }
         ],
-        mobile: [
-            { title: 'Mobile App 1', image: '/images/web_project4.jpg', link: 'https://example.com/mobile1' },
-            { title: 'Mobile App 2', image: '/images/web_project5.jpg', link: 'https://example.com/mobile2' }
+        Django: [
+            { title: 'FinTrack', image: '/images/fintrack.png', link: 'https://example.com/mobile1' }
         ],
-        design: [
-            { title: 'Design Project 1', image: '/images/web_project1.jpg', link: 'https://example.com/design1' },
-            { title: 'Design Project 2', image: '/images/web_project3.jpg', link: 'https://example.com/design2' }
+        Wordpress: [
+            { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://example.com/design1' }
         ]
     };
 
