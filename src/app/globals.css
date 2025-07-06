@@ -522,3 +522,7 @@ a {
     z-index: 99999;
   }
 }
+
+img.card-img-top {
+    height: 212px;
+}

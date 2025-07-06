@@ -15,19 +15,22 @@ const Project = () => {
             { title: 'Growcart', image: '/images/growcart.png', link: 'https://example.com/web3' },
             { title: 'FinTrack', image: '/images/fintrack.png', link: 'https://example.com/mobile1' },
             { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://example.com/mobile2' }, 
+            { title: 'Galmamadidoumbouya', image: '/images/galmamd.png', link: 'https://galmamadidoumbouya.com/' }
+
         ],
         Laravel: [
             { title: 'Arriveo', image: '/images/arriveo.png', link: 'https://example.com/web1' },
-            { title: 'Dream Dezine Ecommerce', image: '/images/dreamdzine.png', link: 'https://example.com/web2' },
+            { title: 'Dream Dezine Ecommerce', image: '/images/dreamdzine.png', link: 'https://dreamdzine.com/densu/' },
             { title: 'Growcart', image: '/images/growcart.png', link: 'https://example.com/web3' }
         ],
         Django: [
             { title: 'FinTrack', image: '/images/fintrack.png', link: 'https://example.com/mobile1' }
         ],
         Wordpress: [
-            { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://example.com/design1' }
+            { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://dreamdzine.com/' },
+            { title: 'Galmamadidoumbouya', image: '/images/galmamd.png', link: 'https://galmamadidoumbouya.com/' }
         ]
-    };
+    };  
 
     return (
         <div className="row text-white py-5 px-3 mt-5">
@@ -61,7 +64,7 @@ const Project = () => {
                         >
                             <div className="card bg-dark text-white shadow-sm hover-overlay">
                                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                    <img src={project.image} alt={project.title} className="card-img-top" />
+                                    <img src={project.image} alt={project.title} className="card-img-top projectimg" />
                                 </a>
                                 <div className="card-body">
                                     <h5 className="card-title">{project.title}</h5>
