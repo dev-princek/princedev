@@ -17,7 +17,7 @@ const Hero = () => {
 
                         {/* Image */}
                         <Image
-                            src="/images/dark.jpg"
+                            src="/images/profile.jpg"
                             alt="Steve Milner"
                             width={400} // Adjust for best fit
                             height={500} // Adjust for best fit
@@ -32,9 +32,8 @@ const Hero = () => {
                         <h1 className="text-6xl font-bold text-yellow-500">I'M PRINCE </h1>
                         <h2 className="text-4xl font-bold">Software Developer</h2>
                         <p className="mt-4 text-gray-400">
-                            I'm a Tunisian-based web designer & front-end developer focused on crafting
-                            clean & user-friendly experiences. I am passionate about building excellent
-                            software that improves the lives of those around me.
+                            A full-stack software developer with 5+ years of experience in Laravel, PHP, Wordpress, Next.js, 
+                            and Python, Django. I specialize in building clean, scalable, and user-friendly web applications that solve real business problems.
                         </p>
                        
 

@@ -12,15 +12,15 @@ const ContactUs = () => {
                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
                             <span className="text-yellow-500"><LocationOn /></span>
-                            <p><strong>123 Street New York City, United States Of America 750065.</strong></p>
+                            <p><strong>Chandigarh, India</strong></p>
                         </div>
                         <div className="flex items-center gap-4">
                             <span className="text-yellow-500"><Email /></span>
-                            <p><strong>steve@mail.com</strong></p>
+                            <p><strong>princekumar74011@mail.com</strong></p>
                         </div>
                         <div className="flex items-center gap-4">
                             <span className="text-yellow-500"><Phone /></span>
-                            <p><strong>+216 21 184 010</strong></p>
+                            <p><strong>+91  9882374011, +91  8219786870</strong></p>
                         </div>
                     </div>
                 </div>

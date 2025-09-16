@@ -3,20 +3,20 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type ProjectCategory = 'all' | 'Laravel' | 'Django' | 'Wordpress';
+type ProjectCategory = 'all' | 'Laravel' | 'Django' | 'Wordpress'| 'NextJs';
 
 const Project = () => {
-    const [activeTab, setActiveTab] = useState<ProjectCategory>('Laravel');
+    const [activeTab, setActiveTab] = useState<ProjectCategory>('all');
 
     const projects: Record<ProjectCategory, { title: string; image: string; link: string }[]> = {
         all: [
-            { title: 'Arriveo', image: '/images/arriveo.png', link: 'https://example.com/web1' },
-            { title: 'Dream Dezine Ecommerce', image: '/images/dreamdzine.png', link: 'https://example.com/web2' },
-            { title: 'Growcart', image: '/images/growcart.png', link: 'https://example.com/web3' },
-            { title: 'FinTrack', image: '/images/fintrack.png', link: 'https://example.com/mobile1' },
-            { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://example.com/mobile2' }, 
-            { title: 'Galmamadidoumbouya', image: '/images/galmamd.png', link: 'https://galmamadidoumbouya.com/' }
-
+            { title: 'Arriveo', image: '/images/arriveo.png', link: '#' },
+            { title: 'Dream Dezine Ecommerce', image: '/images/dreamdzine.png', link: '#' },
+            { title: 'Growcart', image: '/images/growcart.png', link: '#' },
+            { title: 'FinTrack', image: '/images/fintrack.png', link: '#' },
+            { title: 'Elvations', image: '/images/elvations-wp.png', link: '#' }, 
+            { title: 'Galmamadidoumbouya', image: '/images/galmamd.png', link: 'https://galmamadidoumbouya.com/' },
+            { title: 'Dahiya Group', image: '/images/dahiya.png', link: 'https://dahiyagroup.com/' }
         ],
         Laravel: [
             { title: 'Arriveo', image: '/images/arriveo.png', link: 'https://example.com/web1' },
@@ -26,9 +26,13 @@ const Project = () => {
         Django: [
             { title: 'FinTrack', image: '/images/fintrack.png', link: 'https://example.com/mobile1' }
         ],
+        
         Wordpress: [
             { title: 'Elvations', image: '/images/elvations-wp.png', link: 'https://dreamdzine.com/' },
             { title: 'Galmamadidoumbouya', image: '/images/galmamd.png', link: 'https://galmamadidoumbouya.com/' }
+        ],
+        NextJs: [
+            { title: 'Dahiya Group', image: '/images/dahiya.png', link: 'https://dahiyagroup.com/' }
         ]
     };  
 
